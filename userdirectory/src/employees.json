@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Alix Wawa",
+    "occupation": "Software Developer",
+    "yearsExperience": 5
+  },
+  {
+    "id": 2,
+    "name": "Miranda Bulla",
+    "occupation": "Analytical Chemist",
+    "yearsExperience": 4
+  },
+  {
+    "id": 3,
+    "name": "Heather Johnson",
+    "occupation": "Accountant",
+    "yearsExperience": 3
+  },
+  {
+    "id": 4,
+    "name": "Tyler Kincaid",
+    "occupation": "Office Manager",
+    "yearsExperience": 2
+  },
+  {
+    "id": 5,
+    "name": "Lebron Jordan",
+    "occupation": "Software Developer",
+    "yearsExperience": 1
+  }
+]
