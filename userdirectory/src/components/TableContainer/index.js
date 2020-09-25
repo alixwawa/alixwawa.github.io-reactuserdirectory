@@ -4,7 +4,7 @@ import React from "react";
 function Table(props) {
   return (
     <>
-      <table class="table table-bordered table-dark">
+      <table className="table table-bordered table-dark">
         {props.children}
       </table>
     </>

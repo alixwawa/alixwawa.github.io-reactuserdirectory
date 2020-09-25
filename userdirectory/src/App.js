@@ -10,10 +10,22 @@ class App extends Component {
     employees
   };
 
+  sortBy = yearsExperience => {
+    // console.log("hi")
+    // Filter this.state.friends for friends with an id not equal to the id being removed
+    const employees = this.state.employees.sort((a, b) =>
+    (a > b) ? 1 : -1 ? -1: 1)
+    // Set this.state.friends equal to the new friends array
+    this.setState({ employees });
+  };
+
+
   render() {
     return (
       <Table>
-        <Head />
+        <Head 
+         sortBy={this.sortBy}
+         />
         {this.state.employees.map(employee => (
           <Body
             id={employee.id}
