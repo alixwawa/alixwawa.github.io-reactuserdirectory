@@ -8,7 +8,8 @@ import employees from "./employees.json";
 class App extends Component {
 
   state = {
-    employees
+    employees,
+    searchTerm: ''
   };
 
   sortBy = yearsExperience => {
@@ -20,23 +21,21 @@ class App extends Component {
     this.setState({ employees });
   };
 
-  // handleInputChange = occupation => {
-  //   occupation.preventDefault()
-  //   console.log(occupation.name)
-  //   const filteredEmployee = this.state.employees.filter(employee => employee.occupation === occupation)
-  //   console.log(filteredEmployee)
-  //   this.setState({
-  //     [name]: value
-  //   });
-  // };
+  editSearchTerm = (e) => {
+    this.setState({searchTerm: e.target.value})
+  }
+
+  dynamicSearch = () => {
+    return this.state.employees.filter(employee => employee.name.toLowerCase().includes(this.state.searchTerm.toLowerCase()))
+  }
 
   render() {
     return (
       <>
         <Search
-          value={this.state.employees.occupation}
+          value={this.state.searchTerm}
           name="occupation"
-          handleInputChange={this.handleInputChange}
+          onChange={this.editSearchTerm}
           type="text"
           placeholder="occupation" />
         <Table>
@@ -44,7 +43,8 @@ class App extends Component {
             sortBy={this.sortBy}
             filterBy={this.filterBy}
           />
-          {this.state.employees.map(employee => (
+          
+          {this.state.employees.map(employee => (        
             <Body
               id={employee.id}
               key={employee.id}
